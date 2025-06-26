@@ -2,7 +2,7 @@
 
 # HealthBot
 
-![image](https://github.com/Abhijnan29/HealthBot/assets/95416360/4d4fb175-7c71-401b-8945-84dfa643504d)
+
 
 HealthGPT+ is an AI-powered platform designed to provide personalized health information and support to individuals. It utilizes the power of natural language processing and machine learning to understand and respond to health-related inquiries, offering insights and recommendations for a variety of health topics. 
 
