@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthGPT+ Login page</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='CSS/login.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body action="/login">
+    <img class="login-logo" src="/static/Home_Page_logo.png" />
+    <section class="forms-section">
+      <div class="forms">
+        <img class="chatbot-image" src="/static/Login_photo.gif" />
+        <div class="form-wrapper is-active">
+          <form class="form-login" action="/login" method="POST">
+            <!--<li class="mess">{{ msg2 }}<span class="close">&times;</span></li>-->
+            <div>{{msg2 }}</div>
+            <!--<legend>login as username=abc@gmail.com and password=abc123</legend>-->
+            <div class="input-block">
+              <label for="login-email">E-mail</label>
+              <input
+                id="login-email"
+                type="email"
+                name="login-email"
+                required
+              />
+            </div>
+            <div class="input-block">
+              <label for="login-password">Password</label>
+              <input
+                id="login-password"
+                type="password"
+                name="login-password"
+                required
+              />
+            </div>
+            <input type="checkbox" onclick="myFunction()" />Show Password
+            <br />
+            <br />
+            <div>
+              <!--<button type="submit" href="/login" onclick="getFocus()">
+                Login
+              </button>-->
+            </div>
+            <button type="submit" href="/login" class="btn btn-outline-success">Login</a></button>
+            <div class="forgot-password">
+              <a href="/forget">Forgot Password?</a>
+            </div>
+            <p>Don't have an account? <a href="/register">Sign up here!</a></p>
+            <div class="or">OR</div>
+            <p class="or">You can also Sign in through Your</p>
+
+            <div>
+              <!-- Add icon library -->
+              <link
+                style="color: rgb(75, 73, 73)"
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+              />
+
+              <!-- Add font awesome icons -->
+              <a href="#" class="fa fa-facebook fa-lg"></a>&nbsp;&nbsp;
+              &nbsp;&nbsp;<a href="#" class="fa fa-google fa-lg"></a
+              >&nbsp;&nbsp; &nbsp;&nbsp;<a
+                href="#"
+                class="fa fa-instagram fa-lg"
+              ></a
+              >&nbsp;&nbsp; &nbsp;&nbsp;<a
+                href="#"
+                class="fa fa-twitter fa-lg"
+              ></a
+              >&nbsp;&nbsp;
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script>
+      var closebtns = document.getElementsByClassName("close");
+      var i;
+
+      for (i = 0; i < closebtns.length; i++) {
+        closebtns[i].addEventListener("click", function () {
+          this.parentElement.style.display = "none";
+        });
+      }
+
+      function myFunction() {
+        var x = document.getElementById("login-password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>

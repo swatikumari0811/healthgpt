@@ -1,0 +1,134 @@
+<!-- Corrected HTML Code for HealthGPT+ Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthGPT+ Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/63cbf4a3-0abe-4a36-98fb-aee39e2a0ec6/webchat/config.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+      const textToType = "Meet HealthGPT+";
+      function typeText() {
+        const typingText = document.getElementById("typing-text");
+        let currentIndex = 0;
+        const intervalId = setInterval(function() {
+          typingText.textContent += textToType[currentIndex];
+          currentIndex++;
+          if (currentIndex >= textToType.length) {
+            clearInterval(intervalId);
+          }
+        }, 300);
+      }
+      window.onload = typeText;
+    </script>
+</head>
+<body>
+<header>
+  <img class="logo" src="/static/Home_Page_logo.png">
+  <nav>
+    <ul class="nav_links option">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="#medicines">Medicine Shop</a></li>
+        <li><a href="#Doctor">Doctor Consultation</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<marquee class="creator">In most people, the left lung is 10% smaller than the right... The human brain operates on 12 to 25 watts of power...</marquee>
+
+<div class="hero">
+  <div class="Desc-image">
+    <img class="chatbot-image" src="/static/chatbot-pic.gif">
+  </div>
+  <div class="Desc">
+    <h1 id="typing-text"></h1>
+    <h5>A self-teaching personalized medical intelligence platform built from real-time analysis of millions of patient/doctor interactions.</h5>
+    <button class="chat_btn"><a class="chat_me" href="/chat">Chat With me</a></button>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<div class="des">
+  <h1 class="des-title">WHY TO CHOOSE US?</h1>
+  <p class="des-ab">HealthGPT+ is an AI-powered platform designed to provide personalized health information and support to individuals.</p>
+  <p class="des-ab">Tracking your current location, it displays the nearest hospitals in your vicinity.</p>
+</div>
+
+<!-- Cards Section -->
+<div class="card-deta">
+  <div class="row">
+    <!-- Medicine Shop Card -->
+    <div class="column">
+      <div class="card">
+        <div class="card-body" id="medicines">
+          <h5 class="card-title">Medicine Shop</h5>
+          <img class="MedMart_img" src="https://assets-v2.lottiefiles.com/a/5f52011c-1167-11ee-bb7a-87ae82e79a64/WoZMYyosBw.gif">
+          <p class="card-desc">We offer a vast array of top-quality medicines at MedMart+.</p>
+          <a href="/pharm" class="btn btn-primary">Visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor Consultations Card -->
+    <div class="column">
+      <div class="card">
+        <div class="card-body" id="Doctor">
+          <h5 class="card-title">Doctor Consultations</h5>
+          <img class="MedMart_img" src="https://gifyagusi.pl/img/2020/05/11/gify-i-obrazki/Gify%20Lekarz.gif">
+          <p class="card-text">Dr+ now offers reliable online consultations with expert doctors.</p>
+          <a href="/doctor" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Jharkhand Map -->
+<h1 class="mb-0">NEAREST HOSPITAL & MEDICINE SHOP</h1>
+<div id="map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14547.44915630309!2d85.32648784106448!3d23.34410105347238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e19c31c49f9b%3A0x35298989b1e6afce!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1719495881234!5m2!1sen!2sin" 
+    width="800" 
+    height="600" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- Footer -->
+<div class="social">
+  <div class="row">
+    <div class="col-lg-3">
+      <span class="fs-5">HealthGPT+</span>
+      <ul class="list-unstyled small text-muted">
+        
+      </ul>
+    </div>
+    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+     
+    <div class="col-6 col-lg-2 mb-3">
+      <h5>Contact Us</h5>
+      <p><i class="fa fa-location-arrow me-2"></i> Jharkhand, India</p>
+      <p><i class="fa fa-envelope me-2"></i> swati0811kumari@gmail.com</p>
+    </div>
+    <div class="col-6 col-lg-2 mb-3 mt-5">
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>

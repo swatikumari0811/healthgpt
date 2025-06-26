@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+    
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li,a,button{
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: black; 
+    text-decoration: none;
+}
+
+.chat_me{
+  font-family: "Monsterrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white; 
+  text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-between;
+    align-items: center;
+    padding: 15px 10%;
+    height: 100px;
+}
+
+.logo{
+    cursor:pointer;
+    height: 150px;
+    width:150px;
+    margin-right: auto;
+    float: left;
+}
+
+
+.nav_links{
+    list-style: none;
+    margin-top:10px ;
+    padding-left: 20px;
+}    
+.nav_links li{
+    display: inline-block;
+    padding: 20px 30px;
+    justify-content: right;
+    margin-left: auto;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor:pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.d-flex{
+    float: right;
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+.creator{ 
+    background-color: #41EED4;
+}
+
+
+.search_btn{
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    padding: 5px 12px;
+    margin-left: 25px;
+    justify-content: right;
+    background-color:  #41EED4;
+    color: black;
+  }
+  
+  .search{
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .search_btn:hover {
+      opacity: 0.8;
+      color: white;
+  }
+  
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

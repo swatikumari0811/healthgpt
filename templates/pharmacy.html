@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pharmacy</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='CSS/pharm.css') }}"
+    />
+  </head>
+  <style>
+    ul {
+      list-style: none;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      background-color: 19DFE8;
+      margin: 20px;
+      display: inline-block;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px; /* add spacing between items */
+    }
+  </style>
+  <body>
+    <!--Navbar-->
+    <header>
+      <img class="logo" src="/static/Home_Page_logo.png" />
+      <!--<h5 class="logo-na"><italic>Chatbot Assistant<italic></h5>-->
+
+      <nav>
+        <ul class="nav_links option">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="#Doctor">Doctor Consultation</a></li>
+          <li><a href="/cart">Cart</a></li>
+          <li><a href="/logout">{{ session['email']}}</a></li>
+          <li class="dropdown">
+            <!-- <a href="javascript:void(0);" class="dropbtn">{{ session['email']}}</a> -->
+            <!-- <a href="javascript:void(0);" class="dropbtn">abc@gmail.com</a>-->
+            <div class="dropdown-content">
+              <a href="/my_acc">My Account</a>
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!--   
+        <form class="d-flex" role="search">
+        <input class="search" type="search" placeholder="Search" aria-label="Search">
+                  <button class="search_btn" type="submit">Search</button>
+                </form>
+              -->
+    </header>
+    <marquee class="creator"
+      >In most people, the left lung is 10% smaller than the
+      right&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The human brain operates
+      on 12 to 25 watts of power
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human noses can remember
+      50,000 different scents
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our brains don't feel pain
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tongue is the
+      strongest muscle in the entire body.
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </marquee>
+
+    <!--Navbar-->
+
+    <h1>Pharmacy Products</h1>
+    <ul>
+      {% for product in products %}
+      <li>
+        <div class="product-card">
+          <img src="{{ product.image }}" />
+          {{ product.name }}
+          <br />
+          ₹{{ product.price }}
+
+          <br />
+          <!--<label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>-->
+          <button onclick="addToCart({{ product.id }})">Add to Cart</button>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <!--<a href="/cart">View Cart</a>-->
+
+    <script>
+      function addToCart(productId) {
+        fetch("/add_to_cart", {
+          method: "POST",
+          body: new URLSearchParams({ product_id: productId }),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message);
+          });
+      }
+    </script>
+  </body>
+</html>

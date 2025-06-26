@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealthBot | Chat with AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Dialogflow Messenger Script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+  <!-- Optional Custom Styling -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    df-messenger {
+      --df-messenger-button-titlebar-color: #4CAF50; /* Green header */
+      --df-messenger-chat-background-color: #ffffff;
+      --df-messenger-font-color: #000000;
+      --df-messenger-send-icon: #4CAF50;
+      --df-messenger-user-message: #e0f7fa;
+      --df-messenger-bot-message: #f1f8e9;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dialogflow Chatbot -->
+  <df-messenger
+    intent="WELCOME"
+    chat-title="HealthBot"
+    agent-id="228d21c8-635b-4afe-b3c7-c665ccd0e384"
+    language-code="en">
+  </df-messenger>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Cart</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='CSS/cart.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    /* Reset some default styles */
+    body,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Style the cart container */
+    .cart-container {
+      max-width: 300px;
+      margin: 20px auto;
+      border: 1px solid #ccc black;
+      padding: 20px;
+      text-align: center;
+      background-color: skyblue;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the cart items */
+    .cart-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-item {
+      display: flex;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .cart-item img {
+      max-width: 80px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .item-details {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    /* Style the checkout button */
+    .checkout-button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .checkout-button:hover {
+      background-color: #0056b3;
+    }
+
+    .pay {
+      display: flex;
+      justify-content: center;
+    }
+
+    li,
+    a {
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <!--Navbar-->
+    <header>
+      <img class="logo" src="/static/Home_Page_logo.png" />
+      <!--<h5 class="logo-na"><italic>Chatbot Assistant<italic></h5>-->
+
+      <nav>
+        <ul class="nav_links option">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/pharm">Medicine</a></li>
+          <li><a href="/cart">Cart</a></li>
+          <li><a href="/logout">{{ session['email']}}</a></li>
+          <li class="dropdown">
+            <!-- <a href="javascript:void(0);" class="dropbtn">{{ session['email']}}</a> -->
+            <!--<a href="javascript:void(0);" class="dropbtn">abc@gmail.com</a>-->
+            <div class="dropdown-content">
+              <a href="/my_acc">My Account</a>
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!--   
+          <form class="d-flex" role="search">
+          <input class="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="search_btn" type="submit">Search</button>
+                  </form>
+                -->
+    </header>
+    <marquee class="creator"
+      >In most people, the left lung is 10% smaller than the
+      right&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The human brain operates
+      on 12 to 25 watts of power
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human noses can remember
+      50,000 different scents
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our brains don't feel pain
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tongue is the
+      strongest muscle in the entire body.
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </marquee>
+
+    <!--Navbar-->
+
+    <div class="cart-container">
+      <h2>Your Shopping Cart</h2>
+      <ul class="cart-items">
+        {% for item in cart %}
+        <li class="cart-item">
+          <img src="{{ item.image }}" />
+          <div class="item-details">
+            <h3>{{item.name}}</h3>
+            <p>{{item.price}}</p>
+            <p>{{item.id}}</p>
+            <button onclick="removeFromCart({{ item.id }})">Remove</button>
+          </div>
+        </li>
+        {% endfor %}
+        <!-- Add more items here -->
+      </ul>
+      <div class="cart-total">
+        <p>₹{{total_price}}</p>
+      </div>
+      <!--<a href="/home">Back to Products</a>-->
+
+      <div class="pay">
+        <button class="btn btn-outline-success">Pay</button>
+      </div>
+      <button class="btn btn-outline-danger">
+        <a href="/pharm">Cancel</a>
+      </button>
+    </div>
+    <!--<h1>Shopping Cart</h1>
+    <ul>
+        {% for item in cart %}
+            <li>{{ item.name }} - ${{ item.price }}</li>
+            <button onclick="removeFromCart({{ item.id }})">Remove</button>
+        {% endfor %}
+    </ul>
+    <p>Total Price: ${{ total_price }}</p>
+    <a href="/">Back to Products</a>
+-->
+    <script>
+      function removeFromCart(productId) {
+        fetch("/remove_from_cart", {
+          method: "POST",
+          body: new URLSearchParams({ product_id: productId }),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message);
+            location.reload(); // Refresh the page to update the cart
+          });
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+
+<section class="h-100" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-10">
+  
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+            <div>
+              <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
+                    class="fas fa-angle-down mt-1"></i></a></p>
+            </div>
+          </div>
+          {% for item in cart %}
+
+          <div class="card rounded-3 mb-4">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center">
+               
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                   
+                  <p class="lead fw-normal mb-2">{{ item.name }}</p>
+                 
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                  
+  
+                  <input id="form1" min="0" name="quantity" value="2" type="number"
+                    class="form-control form-control-sm" />
+  
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">{{ item.price}}</h5>
+                  <button onclick="removeFromCart({{ item.id }})">Remove</button>
+                </div>
+               
+                <p>Total Price: ${{ total_price }}</p>
+                <a href="/">Back to Products</a>
+    
+              </div>
+            </div>
+          </div>
+  
+  
+          {% endfor %}
+  
+          
+  
+          <div class="card">
+            <div class="card-body">
+              <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function removeFromCart(productId) {
+        fetch('/remove_from_cart', {
+            method: 'POST',
+            body: new URLSearchParams({ 'product_id': productId }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            location.reload(); // Refresh the page to update the cart
+        });
+    }
+</script>
+
+</body>
+</html>
+-->

@@ -1,0 +1,94 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>HealthGPT+ Registration Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/sign_in.css') }}">
+
+    <script type="text/javascript" >
+        function validateForm() {
+            let x = document.forms["myForm"]["firstname"].value;
+            let y = document.forms["myForm"]["lastname"].value;
+            let z = document.forms["myForm"]["email"].value;
+            let p = document.forms["myForm"]["phonenumber"].value;
+            let q = document.forms["myForm"]["password"].value;
+            if ( z== "") {
+              alert("email must be filled out");
+              return false;
+            }
+            else if(p== ""){
+                
+                alert("phonenumber must be filled out");
+                return false;        
+            }
+            else if(q== ""){
+                alert("password must be filled out");
+                return false;        
+            }
+            else
+              return true;
+            
+              
+
+        }
+
+        function valid()
+        {
+        var p=/^\d{10}$/;
+        var val=document.getElementById('phonenumber');
+            if(val.value.length!=10){
+            alert("Plz Enter 10 Digit Only!!");
+            return false;
+            }
+            else{
+                if(val.value.match(p)){
+                    return true;
+                }
+                else{
+                   return false;
+                }
+            }
+        }
+
+
+              
+    </script>
+</head>
+<body action="/register" >
+    <img class="logo" src="/static/HealthGPT+.png">
+    <h1>Welcome To HealthGPT+</h1>
+    <h2>SIGN UP PAGE </h2>
+    <form name="myForm" action="/register" onsubmit="return validateForm()" method='POST'>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" ><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" ><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ><br><br>
+
+        <label for="phonenumber">Phonenumber:</label>
+        <!--<input type="number" id="phonenumber" name="phonenumber"  pattern="\d{10}" ><br><br>-->
+        <input type="number" id="phonenumber" name="phonenumber" ><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" ><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ><br><br>
+
+
+
+
+        <input type="submit" value="Submit" onClick="return valid()" >
+
+        <div class="container signin">
+            <p>Already have an account? <a href="/login"  onClick="history.go(-1); return false;">Login</a>.</p>
+        </div>
+    </form>
+    
+</body>
+
+
+</html>

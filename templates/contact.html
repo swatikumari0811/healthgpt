@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthGPT+ Contact Page</title>
+   <!--BOOTSTRAP LINK-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   <link rel="stylesheet" href="{{url_for('static', filename='CSS/contact.css') }}">
+    <!---TAILWIND LINK-->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  
+    <!--Navbar-->
+    <header>
+      <img class="logo" src="/static/Home_Page_logo.png">
+            <!--<h5 class="logo-na"><italic>Chatbot Assistant<italic></h5>-->
+       
+              <nav>
+                <ul class="nav_links option">
+                    <li><a  href="/home" >Home</a></li>
+                    <li><a  href="/about">About</a></li>
+                    <li><a  href="/contact">Contact</a></li>
+                    <li><a  href="#medicines">Medicine Shop</a></li>
+                    <li><a  href="#Doctor">Doctor Consultation</a></li>
+                    <!--<li><a  href="/logout">{{ session['email']}}</a></li>-->
+                    <li class="dropdown">
+                      <a href="javascript:void(0);" class="dropbtn">{{ session['email']}}</a>
+                      <div class="dropdown-content">
+                          <a href="/my_acc">My Account</a>
+                          <a href="/logout">Logout</a>
+                          
+                      </div>
+                  </li>
+                    
+                </ul>
+            </nav>
+
+             
+
+
+
+               
+    </header>
+    <marquee class="creator" >In most people, the left lung is 10% smaller than the right&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The human brain operates on 12 to 25 watts of power        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human noses can remember 50,000 different scents           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our brains don't feel pain                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tongue is the strongest muscle in the entire body.     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                            </marquee>
+   
+    <!--Navbar-->
+
+ <!-- CAROUSEL-->
+ <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  src="/static/Contact_Page_logo.png" class="d-block h-30" alt="...">
+      
+    </div>
+    <div class="carousel-item">
+      <img   src="/static/Contact_Page_logo.png" class="d-block h-30" alt="...">
+      
+    </div>
+    <div class="carousel-item">
+      <img  src="/static/Contact_Page_logo.png" class="d-block h-30 " alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  <!--SCROLLER-->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+</div>
+<!-- CAROUSEL-->
+
+<!--Contact Us-->
+
+  <div class="container mb-3 py-4">
+  <h1 class="text-center text-5xl"><strong>Contact Us</strong></h1><br>
+  <form method="post" action="contact/" >
+  
+  
+      <div class="form-group">
+          
+          <label for="name"><strong>Name</strong></label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+      </div>
+  
+      <div class="form-group">
+          <label for="email"><Strong> Email address</Strong></label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+      </div>
+      
+      <div class="form-group">
+          <label for="phonenumber"><strong>Mobile Number</strong></label>
+          <input type="phone" class="form-control" id="phone" name="phonenumber" placeholder="Enter Your Phone Number">
+      </div>      
+      
+      <div class="form-group">
+          <label for="desc"><strong>Tell me about what you want to contact me for...</strong> </label>
+          <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+      </div>
+      <br>
+      <button class="btn btn-primary" type="submit" >Submit</button>
+  
+  </form>
+  
+  </div>
+
+  <!--Contact Us-->
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</html>

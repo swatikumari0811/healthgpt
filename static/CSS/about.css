@@ -1,0 +1,244 @@
+
+
+.about-section {
+    background-color: WHITE;
+    background-size: 55%;
+    overflow: hidden;
+  
+    padding: 200px ;
+  }
+  
+  .about-section h2 {
+    font-size: 36px;
+    margin: 20px;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1;
+    margin: 20px;
+    color:rgb(4, 36, 71);
+  }
+  
+  .about-section img {
+    max-width: 100%;
+    height:auto;
+    width: auto;
+  }
+  
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+    
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+  
+  li,a,button{
+      font-family: "Monsterrat", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: black; 
+      text-decoration: none;
+  }
+  
+  header{
+      display: flex;
+      justify-content: flex-between;
+      align-items: center;
+      padding: 15px 10%;
+      height: 100px;
+  }
+  
+  .logo{
+      cursor:pointer;
+      height: 150px;
+      width:150px;
+      margin-right: auto;
+  }
+  
+  .nav_links{
+      list-style: none;
+      margin-top:10px ;
+  }
+  .nav_links li{
+      display: inline-block;
+      padding: 0px 20px;
+  }
+  
+  .nav_links li a{
+      transition: all 0.3s ease 0s;
+  }
+  
+  .nav_links li a:hover{
+      color: #0088a9;
+  }
+  
+  button {
+      padding: 9px 25px;
+      background-color: rgba(0, 136, 169, 1);
+      border: none;
+      border-radius: 50px;
+      cursor:pointer;
+      transition: all 0.3s ease 0s;
+  
+  }
+  
+  .d-flex{
+    float: right;
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+
+.search_btn{
+  transition-duration: 0.4s;
+  border-radius: 12px;
+  padding: 5px 12px;
+  margin-left: 25px;
+  justify-content: right;
+  background-color:  #41EED4;
+  color: black;
+}
+
+.search{
+  border-radius: 12px;
+  text-align: center;
+}
+
+.search_btn:hover {
+    opacity: 0.8;
+    color: white;
+}
+  
+  .creator{ 
+      background-color: #41EED4;
+  }
+  
+  .chatbot-image{
+    height: 500px;
+    width: 500px;
+    margin-right: 2px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    float: right;
+  }
+  
+  
+  .Desc {
+    box-sizing: border-box;
+    position: center;
+    text-align: center;
+    font-size: small;
+    margin: ;
+    width: 25%;
+    padding: 1px;
+    margin-left: 50px;
+    border: 5px solid black;
+  }
+  
+  .Desc-image{
+    display: block;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-top: 45px;
+    float: right;
+  }
+  .section{
+      border: 5px solid black;
+      height: 900px;
+      
+  }
+    h3{
+      margin-right: auto;
+      text-align: left;
+      margin-left: 5px;
+      font-family: Open Sans, 'Helvetica', 'Arial', sans-serif;
+      color: black;
+    }
+  .content{
+      max-width: 900px;
+      margin-top: 300px;
+      float: left;
+      color:#21C323;
+  
+  
+  }
+  .social{
+    height: 300px;
+    background-color: skyblue;
+  }
+  
+  .hero{
+    height: 700px;
+    box-sizing: border-box;
+    background-color: aquamarine;
+  
+  
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+
+
+  body {
+    background: #eee;
+  }
+  
+  .name {
+    color: blue;
+  }
+  
+  .work {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .about span {
+    font-size: 13px;
+  }
+  
+  .v-profile {
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .box {
+    -webkit-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+    -moz-box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+    box-shadow: 13px 12px 5px -10px rgba(196,194,196,0.72);
+  }
+  
+  .col-md-3 {
+    margin-top: 10px;
+  }
