@@ -56,8 +56,3 @@ Every doctor has different sections for treatment, here HealthGPT+ provides suit
  # Database :
 	MySQL
 
-# YouTube Link: 
-	https://www.youtube.com/watch?v=di10Dyh7Lm0&t=7s
-# Devfolio Link: 
-	https://devfolio.co/projects/healthgpt-301e
-
