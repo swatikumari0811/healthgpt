@@ -13,7 +13,7 @@ db = mysql.connector.connect(
     host="sql12.freesqldatabase.com",
     user="sql12787165",
     password="yj1D9QFJGP",
-    database="ql12787165",
+    database="sl12787165",
     port=3306
 )
 
