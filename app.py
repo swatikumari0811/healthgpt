@@ -8,32 +8,6 @@ app.secret_key = 'your_secret_key_here'
 app.permanent_session_lifetime = timedelta(minutes=5)
 
 
-import mysql.connector
-
-# Connect to your remote MySQL database
-db = mysql.connector.connect(
-    host="sql12.freesqldatabase.com",      # ✅ Your DB host
-    user="sql12787165",                    # ✅ Your DB username
-    password="Swati08@Jay",         # ✅ Your correct DB password
-    database="sql12787165",                # ✅ Your DB name
-    port=3306
-)
-cursor = db.cursor()
-
-
-cursor.execute("""
-    CREATE TABLE IF NOT EXISTS contacts (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(100),
-        email VARCHAR(100),
-        phone VARCHAR(15),
-        message TEXT,
-        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-""")
-
-
-
 # Sample product data
 products = [
     {"id": 1, "name": "Medicine A", "price": 10.00, "image": 'https://static.oxinis.com/healthmug/image/product/102338-2-1000.webp'},
