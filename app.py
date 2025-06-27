@@ -10,14 +10,12 @@ app.permanent_session_lifetime = timedelta(minutes=5)
 import mysql.connector
 
 db = mysql.connector.connect(
-    host="your-hostname-here",        # Example: sql12.freesqldatabase.com
-    user="your-username-here",        # Example: sql12545678
-    password="your-password-here",    # Copy from dashboard
-    database="your-db-name-here",     # Example: sql12545678
-    port=3306                         # Keep it 3306
+    host="sql12.freesqldatabase.com",
+    user="sql12787165",
+    password="yj1D9QFJGP",
+    database="ql12787165",
+    port=3306
 )
-
-cursor = db.cursor()
 
 
 # Sample product data
