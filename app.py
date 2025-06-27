@@ -1,11 +1,20 @@
-from flask import Flask, render_template, request, redirect, jsonify, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+import mysql.connector
 from datetime import timedelta
 
+# Initialize Flask app
 app = Flask(__name__)
+app.secret_key = 'your_secret_key_here'
+app.permanent_session_lifetime = timedelta(minutes=5)
 
-# Secret key and session settings
-app.secret_key = 'bdc556f280795c3fbeeceec6c1371403e130cfef785cbd02ba648f3a10ff3c75'
-app.permanent_session_lifetime = timedelta(seconds=3)
+# MySQL DB Connection
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",  # Leave blank if using XAMPP default
+    database="healthgpt"
+)
+cursor = db.cursor()
 
 # Sample product data
 products = [
@@ -22,12 +31,10 @@ products = [
 
 cart = []
 
-# Redirect root to login
 @app.route('/')
 def index():
     return redirect(url_for('login'))
 
-# Login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg2 = ''
@@ -42,13 +49,11 @@ def login():
             msg2 = 'Invalid credentials'
     return render_template('login.html', msg2=msg2)
 
-# Logout
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('login'))
 
-# Registration
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -58,42 +63,47 @@ def register():
         phonenumber = request.form.get('phonenumber')
         address = request.form.get('address')
         password = request.form.get('password')
-        # Normally you would insert these into a database here
         msg = 'Registration Successful!'
         return render_template('login.html', msg=msg)
     return render_template('Registration.html')
 
-# Home Page
 @app.route('/home')
 def home():
     return render_template('home.html')
 
-# Contact Page
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phonenumber']
+        message = request.form['desc']
+
+        query = "INSERT INTO contacts (name, email, phone, message) VALUES (%s, %s, %s, %s)"
+        cursor.execute(query, (name, email, phone, message))
+        db.commit()
+
+        flash("Thanks for reaching out! We'll get back to you soon.")
+        return redirect(url_for('contact'))
+
     return render_template('contact.html')
 
-# About Page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-# Forget Password Page
 @app.route('/forget')
 def forget():
     return render_template('forget_password.html')
 
-# Chatbot Page
 @app.route('/chat')
 def chat():
     return render_template('chatbot.html')
 
-# Pharmacy Product Page
 @app.route('/pharm')
 def pharmacy():
     return render_template('pharmacy.html', products=products)
 
-# Add to Cart
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     product_id = int(request.form['product_id'])
@@ -102,13 +112,11 @@ def add_to_cart():
         cart.append(product)
     return jsonify({'message': 'Item added to cart'})
 
-# View Cart
 @app.route('/cart')
 def view_cart():
     total_price = sum(item['price'] for item in cart)
     return render_template('cart.html', cart=cart, total_price=total_price)
 
-# Remove from Cart
 @app.route('/remove_from_cart', methods=['POST'])
 def remove_from_cart():
     product_id = int(request.form['product_id'])
@@ -117,6 +125,5 @@ def remove_from_cart():
         cart.remove(product)
     return jsonify({'message': 'Item removed from cart'})
 
-# Run App
 if __name__ == '__main__':
     app.run(debug=True)

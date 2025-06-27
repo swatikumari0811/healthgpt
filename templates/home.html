@@ -1,4 +1,3 @@
-<!-- Corrected HTML Code for HealthGPT+ Home Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,129 +5,423 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthGPT+ Home page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static', filename='CSS/home.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"></script>
 
     <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/63cbf4a3-0abe-4a36-98fb-aee39e2a0ec6/webchat/config.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-
-    <script type="text/javascript">
-      const textToType = "Meet HealthGPT+";
-      function typeText() {
-        const typingText = document.getElementById("typing-text");
-        let currentIndex = 0;
-        const intervalId = setInterval(function() {
-          typingText.textContent += textToType[currentIndex];
-          currentIndex++;
-          if (currentIndex >= textToType.length) {
-            clearInterval(intervalId);
-          }
-        }, 300);
-      }
-      window.onload = typeText;
-    </script>
-</head>
-<body>
-<header>
-  <img class="logo" src="/static/Home_Page_logo.png">
-  <nav>
-    <ul class="nav_links option">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="#medicines">Medicine Shop</a></li>
-        <li><a href="#Doctor">Doctor Consultation</a></li>
-        <li><a href="/logout">Logout</a></li>
-    </ul>
-  </nav>
-</header>
-
-<marquee class="creator">In most people, the left lung is 10% smaller than the right... The human brain operates on 12 to 25 watts of power...</marquee>
-
-<div class="hero">
-  <div class="Desc-image">
-    <img class="chatbot-image" src="/static/chatbot-pic.gif">
-  </div>
-  <div class="Desc">
-    <h1 id="typing-text"></h1>
-    <h5>A self-teaching personalized medical intelligence platform built from real-time analysis of millions of patient/doctor interactions.</h5>
-    <button class="chat_btn"><a class="chat_me" href="/chat">Chat With me</a></button>
-  </div>
-</div>
-
-<!-- WHY CHOOSE US -->
-<div class="des">
-  <h1 class="des-title">WHY TO CHOOSE US?</h1>
-  <p class="des-ab">HealthGPT+ is an AI-powered platform designed to provide personalized health information and support to individuals.</p>
-  <p class="des-ab">Tracking your current location, it displays the nearest hospitals in your vicinity.</p>
-</div>
-
-<!-- Cards Section -->
-<div class="card-deta">
-  <div class="row">
-    <!-- Medicine Shop Card -->
-    <div class="column">
-      <div class="card">
-        <div class="card-body" id="medicines">
-          <h5 class="card-title">Medicine Shop</h5>
-          <img class="MedMart_img" src="https://assets-v2.lottiefiles.com/a/5f52011c-1167-11ee-bb7a-87ae82e79a64/WoZMYyosBw.gif">
-          <p class="card-desc">We offer a vast array of top-quality medicines at MedMart+.</p>
-          <a href="/pharm" class="btn btn-primary">Visit</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Doctor Consultations Card -->
-    <div class="column">
-      <div class="card">
-        <div class="card-body" id="Doctor">
-          <h5 class="card-title">Doctor Consultations</h5>
-          <img class="MedMart_img" src="https://gifyagusi.pl/img/2020/05/11/gify-i-obrazki/Gify%20Lekarz.gif">
-          <p class="card-text">Dr+ now offers reliable online consultations with expert doctors.</p>
-          <a href="/doctor" class="btn btn-primary">Get Started</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<script src="https://mediafiles.botpress.cloud/63cbf4a3-0abe-4a36-98fb-aee39e2a0ec6/webchat/config.js" defer></script>
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
 
-<!-- Jharkhand Map -->
-<h1 class="mb-0">NEAREST HOSPITAL & MEDICINE SHOP</h1>
-<div id="map">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14547.44915630309!2d85.32648784106448!3d23.34410105347238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e19c31c49f9b%3A0x35298989b1e6afce!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1719495881234!5m2!1sen!2sin" 
-    width="800" 
-    height="600" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+     <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Footer -->
-<div class="social">
-  <div class="row">
-    <div class="col-lg-3">
-      <span class="fs-5">HealthGPT+</span>
-      <ul class="list-unstyled small text-muted">
-        
-      </ul>
-    </div>
-    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-     
-    <div class="col-6 col-lg-2 mb-3">
-      <h5>Contact Us</h5>
-      <p><i class="fa fa-location-arrow me-2"></i> Jharkhand, India</p>
-      <p><i class="fa fa-envelope me-2"></i> swati0811kumari@gmail.com</p>
-    </div>
-    <div class="col-6 col-lg-2 mb-3 mt-5">
+
+     <script type="text/javascript" >
+     /*   // Array containing the different texts you want to display
+        const texts = [
+          "Welcome to Our HealthGPT+ Website",
+          "Meet HealthGPT+",
+          // Add more texts as needed
+        ];
       
+        // Function to update the text in the hero portion
+        function updateHeroText() {
+          const dynamicText = document.getElementById("dynamic-text");
+          const randomIndex = Math.floor(Math.random() * texts.length);
+          dynamicText.textContent = texts[randomIndex];
+
+        }
+      
+        // Update the text every 3 seconds (adjust the interval as needed)
+        setInterval(updateHeroText, 1500); */
+
+         // Text you want to display with typing effect
+  const textToType = "Meet HealthGPT+";
+
+  // Function to simulate typing effect
+  function typeText() {
+    const typingText = document.getElementById("typing-text");
+    let currentIndex = 0;
+    const intervalId = setInterval(function() {
+      typingText.textContent += textToType[currentIndex];
+      currentIndex++;
+      if (currentIndex >= textToType.length) {
+        clearInterval(intervalId);
+      }
+    }, 300); // Adjust the typing speed here (lower value means faster typing)
+  }
+
+  // Call the typeText function when the page loads
+  window.onload = typeText;
+
+
+  
+</script>
+            
+</head>
+
+
+<body>
+    <!--Navbar-->
+    <header>
+      <img class="logo" src="/static/Home_Page_logo.png">
+            <!--<h5 class="logo-na"><italic>Chatbot Assistant<italic></h5>-->
+       
+              <nav>
+                <ul class="nav_links option">
+                    <li><a  href="/home" >Home</a></li>
+                    <li><a  href="/about">About</a></li>
+                    <li><a  href="/contact">Contact</a></li>
+                    <li><a  href="#medicines">Medicine Shop</a></li>
+                    <li><a  href="#Doctor">Doctor Consultation</a></li>
+                    <!-- <li><a  href="/logout">{{ session['email']}}</a></li>-->
+                    <li><a href="/logout">Logout</a></li>
+                    <li class="dropdown">
+                      <!-- <a href="javascript:void(0);" class="dropbtn">{{ session['email']}}</a> -->
+                      <!--<a href="javascript:void(0);" class="dropbtn">abc@gmail.com</a>-->
+                      <div class="dropdown-content">
+                          <a href="/my_acc">My Account</a>
+                          <a href="/logout">Logout</a>
+                          
+                      </div>
+                  </li>
+                    
+                </ul>
+            </nav>
+
+          <!--   
+            <form class="d-flex" role="search">
+                <input class="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="search_btn" type="submit">Search</button>
+              </form>
+            -->
+
+
+               
+    </header>
+    <marquee class="creator" >In most people, the left lung is 10% smaller than the right&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The human brain operates on 12 to 25 watts of power        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human noses can remember 50,000 different scents           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our brains don't feel pain                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tongue is the strongest muscle in the entire body.     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                            </marquee>
+   
+    <!--Navbar-->
+
+
+      <li class="mess">{{ msg2 }}<span class="close">&times;</span></li>
+  
+    
+    <!-- alert -->
+<!--   <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>SUCCESS!</strong> You are now logged in welcome.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>-->
+    <!--alert-->
+
+    <!--Hero-->
+     <div class="hero">
+      <div class="Desc-image">
+        <p><img class="chatbot-image" src="/static/chatbot-pic.gif"></p>
+      </div>
+      <div class="Desc" >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--<h1><u>Meet HealthGPT+</u></h1>-->
+        <!--<h1 id="dynamic-text">Meet HealthGPT+</h1>-->
+
+
+        <!-- <h1 id="typing-text" href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1400&color=152EF7&random=false&width=1000&lines=Meet+HealthGPT+...." alt="Typing SVG" /></h1> -->
+        <!-- <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&pause=1000&random=false&width=435&lines=Meet+HealthGPT+" alt="Typing SVG" /></a> -->
+        <h1 id="typing-text"></h1> 
+        <br>
+        <br>
+        <h5>A self-teaching personalized medical intelligence platform built from real-time analysis of millions of patient/doctor interactions.</h5>
+        <br>
+        <br>
+        <button class="chat_btn" ><a class="chat_me" href="/chat">Chat With me</a></button>
+      </div>
+     </div>
+    <!--Hero-->
+
+
+
+<!--DESC-->
+<div class="des">
+   <h1 class="des-title">WHY    TO    CHOOSE    US   ?</h1>
+   <br>
+   <br>
+   <p class="des-ab">HealthGPT+ is an AI-powered platform designed<p><p class="des-ab">to provide personalized health information and support to individuals.<p>
+
+   <p class="des-ab">It utilizes the power of natural language processing and machine learning to understand and respond<p class="des-ab"> to health-related enquiries, offering insights and recommendations for a variety of health topics.</p> 
+   
+   <p class="des-ab">HealthGPT+ solves the problem by providing accurate, personalized, and accessible health information<p class="des-ab">, empowering individuals to make informed decisions and take control of their well-being.
+    <p class="des-ab">Tracking your current location, it displays the nearest hospitals in your vicinity.</p>
+</div>
+<!--DESC-->
+<div class="aaa"></div>
+<div class="aaa"></div>
+<div class="aaa"></div>
+<!--Earth-->
+   <div class="HYPE_element" id="hype-obj-Y3TKIK1TIGL2J3P3T9MM" hype_scene_index="0" role="img" >
+      <div class="button button1">
+        <img class="btn1" src="https://i.ibb.co/PMzv0Lc/Pics-Art-07-26-06-54-57.jpg" border="0"></a>     
+      </div>
+      <div class="button button2">
+       <img class="btn2" src="https://i.ibb.co/YhGzW26/Pics-Art-07-26-07-46-44.jpg" border="0"></a>
+      </div>
+      <div class="button button3">
+        <img class="btn3" src="https://i.ibb.co/9TTXD4k/Pics-Art-07-26-07-48-45.jpg" border="0"></a>
+      </div>
+      <div class="button button4">
+          <img class="btn4" src="https://i.ibb.co/F7mtptF/Pics-Art-07-26-07-50-31.jpg" border="0"></a>
+      </div>
+  
+     <div class="earth">
+            <div></div>
+      </div>
+  </div>
+
+<!--Earth-->
+
+<div class="aaa"></div>  
+
+  <!--card-->
+    <div class="card-deta">
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="card-body" id="medicines">
+              <h5 class="card-title">Medicine Shop</h5>
+              <br>
+              <p class="card-desc">WELCOME TO MEDMART+</p>
+              <img class="MedMart_img" src="https://assets-v2.lottiefiles.com/a/5f52011c-1167-11ee-bb7a-87ae82e79a64/WoZMYyosBw.gif">
+              <p class="card-desc">
+                We extend our warmest greetings and invite you to explore the vast array of top-quality medicines available at our website, MedMart+.
+                
+                
+                With a commitment to your health and well-being, MedMart+ offers a comprehensive selection of pharmaceutical products, all sourced from reputable manufacturers and adhering to the highest industry standards</p>
+              <a href="/pharm" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div class="card-body" id="Doctor">
+              <h5 class="card-title">Doctor consultations</h5>
+              <br>
+              <p class="card-desc">WELCOME TO DR+</p>
+              <img class="MedMart_img" src="https://gifyagusi.pl/img/2020/05/11/gify-i-obrazki/Gify%20Lekarz.gif">
+              <p class="card-text">Dr+, your health and well-being are our top priorities. We are thrilled to announce that our platform is now offering convenient and reliable online consultations with our esteemed team of doctors
+              <p class="card-text">Expert Doctors,
+                                   Convenience,
+                                   Secure and Private, 
+                                   Comprehensive Services,
+                                   Peace of Mind</p>
+              <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>  
+  <!--card-->
+    
+    <!-- AI Info -->
+    <!-- Why Use AI Chatbot Section -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    
+<!-- Why Use AI Chatbot Section -->
+<div class="container my-5">
+  <div class="row align-items-start g-4"> <!-- g-4 adds spacing between cols -->
+
+    <!-- Doctor Image -->
+    <div class="col-md-5 text-center">
+      <img class="img-fluid" src="/static/doctor-unscreen.gif" alt="Doctor Assistant" style="max-width: 100%; height: auto;">
     </div>
+    
+    <!-- AI Info -->
+    <div class="col-md-7">
+      <h2 class="mb-4" style="font-weight: bold; color: #1a1a1a;">Why AI Assistant Is Important For You</h2>
+      
+      <p class="mb-3" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Improved Diagnostic Accuracy:</strong> AI models can analyze vast amounts of medical data,
+        including patient records, imaging, and genetic information to assist healthcare professionals in making more accurate and timely diagnoses.
+      </p>
+      
+      <p class="mb-3" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Personalized Treatment Plans:</strong> Advanced AI models help tailor treatment plans based on unique medical history, genetic makeup, and lifestyle.
+      </p>
+
+      <p class="mb-3" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Efficiency and Cost Savings:</strong> AI streamlines admin processes and reduces healthcare costs, making care more accessible and affordable.
+      </p>
+
+      <p class="mb-3" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Remote Healthcare and Telemedicine:</strong> AI supports remote patient monitoring and consultations, especially in underserved areas.
+      </p>
+
+      <p class="mb-3" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Patient Engagement:</strong> AI tools provide personalized information to empower patient decisions.
+      </p>
+
+      <p class="mb-0" style="font-size: 1rem; line-height: 1.6; color: #333;">
+        <strong>Medical Research:</strong> AI can analyze large datasets from research to discover trends and opportunities.
+      </p>
+    </div>
+
   </div>
 </div>
+
+</div>
+<!--Why Use AI Chatbot-->
+
+</div>  
+
+<br>
+<br>
+<br>
+<br>
+
+
+<!--Why Use Ai chatbot-->
+
+  <!--Map-->
+  <!--<div class="Map">
+    <canvas id="c"></canvas>
+    <h4>HOSPITAL AND MEDICINE SHOP NEAR ME</h4>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14730.494654358094!2d88.42632823929215!3d22.630524426900642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e36767f36ab%3A0x3d7c938cf7eece45!2sKaikhali%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1689235268875!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+      <!--    <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+</div></div></div></div><div class="row vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container col-sm-12 vc_hidden-lg"><div class="vc_column-inner "><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+    <script src="app.js"></script>
+    <script src="three.js"></script>
+
+  </div>-->
+  <!--Map-->
+<!--Map-->
+
+<!-- Nearest Hospital & Medicine Shop Section -->
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">NEAREST HOSPITAL & MEDICINE SHOP</h2>
+  </div>
+
+  <div class="ratio ratio-16x9">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.026655121794!2d85.3218062748388!3d23.344101406932776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e11d7c57e9f5%3A0x51a5e5e064d50d8!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1719480979244" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+  <!--social-->
+  <div class="social">
+      <div class="row">
+        <div class="col-lg-3">
+          <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+           
+            <span class="fs-5">HealthGPT+</span>
+          </a>
+          <ul class="list-unstyled small text-muted">
+           
+              <br>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          
+         
+
+            
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+
+          
+
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+  <h5>Contact Us</h5>
+  <p><i class="fa fa-location-arrow me-2"></i> Ranchi, Jharkhand, India</p>
+  <p>
+    <i class="fa fa-envelope me-2"></i>
+    swati0811kumari@gmail.com
+  </p>
+</div>
+
+
+        <div class="col-6 col-lg-2 mb-3 mt-5">
+          
+
+          
+    
+        </div>
+
+    
+       
+      </div>
+    </div>  
+  </div>  
+  <!--social-->
+   
+   <!-- prettier-ignore -->
+   <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="_ib",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>""+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});
+  
+    var closebtns = document.getElementsByClassName("close");
+    var i;
+    
+    for (i = 0; i < closebtns.length; i++) {
+      closebtns[i].addEventListener("click", function() {
+        this.parentElement.style.display = 'none';
+      });
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const dropdowns = document.querySelectorAll(".dropdown");
+  
+      dropdowns.forEach(dropdown => {
+          dropdown.addEventListener("click", function() {
+              this.querySelector(".dropdown-content").classList.toggle("show");
+          });
+      });
+  
+      window.addEventListener("click", function(event) {
+          if (!event.target.matches(".dropbtn")) {
+              dropdowns.forEach(dropdown => {
+                  const dropdownContent = dropdown.querySelector(".dropdown-content");
+                  if (dropdownContent.classList.contains("show")) {
+                      dropdownContent.classList.remove("show");
+                  }
+              });
+          }
+      });
+  });
+  
+  
+  </script>
+
+    
 </body>
 </html>
