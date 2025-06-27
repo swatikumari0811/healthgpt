@@ -12,15 +12,14 @@ import mysql.connector
 
 # Connect to your remote MySQL database
 db = mysql.connector.connect(
-    host="sql12.freesqldatabase.com",       # Replace with your host
-    user="sql12787165",                     # Replace with your DB username
-    password="your_db_password",            # Replace with your DB password
-    database="sql12787165",                 # Replace with your DB name (same as user)
+    host="sql12.freesqldatabase.com",      # ✅ Your DB host
+    user="sql12787165",                    # ✅ Your DB username
+    password="Swati08@Jay",         # ✅ Your correct DB password
+    database="sql12787165",                # ✅ Your DB name
     port=3306
 )
-
-# Create a cursor
 cursor = db.cursor()
+
 
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS contacts (
