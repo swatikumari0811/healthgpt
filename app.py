@@ -7,15 +7,32 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 app.permanent_session_lifetime = timedelta(minutes=5)
 
+
 import mysql.connector
 
+# Connect to your remote MySQL database
 db = mysql.connector.connect(
-    host="sql12.freesqldatabase.com",
-    user="sql12787165",
-    password="yj1D9QFJGP",
-    database="sql12787165",
+    host="sql12.freesqldatabase.com",       # Replace with your host
+    user="sql12787165",                     # Replace with your DB username
+    password="your_db_password",            # Replace with your DB password
+    database="sql12787165",                 # Replace with your DB name (same as user)
     port=3306
 )
+
+# Create a cursor
+cursor = db.cursor()
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS contacts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        email VARCHAR(100),
+        phone VARCHAR(15),
+        message TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+""")
+
 
 
 # Sample product data
