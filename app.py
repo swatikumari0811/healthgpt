@@ -7,14 +7,18 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 app.permanent_session_lifetime = timedelta(minutes=5)
 
-# MySQL DB Connection
+import mysql.connector
+
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",  # Leave blank if using XAMPP default
-    database="healthgpt"
+    host="your-hostname-here",        # Example: sql12.freesqldatabase.com
+    user="your-username-here",        # Example: sql12545678
+    password="your-password-here",    # Copy from dashboard
+    database="your-db-name-here",     # Example: sql12545678
+    port=3306                         # Keep it 3306
 )
+
 cursor = db.cursor()
+
 
 # Sample product data
 products = [
@@ -70,6 +74,19 @@ def register():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS contacts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        email VARCHAR(100),
+        phone VARCHAR(15),
+        message TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+""")
+db.commit()
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
